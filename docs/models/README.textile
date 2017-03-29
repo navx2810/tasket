@@ -2,9 +2,7 @@ h1. Models
 
 h2. Structure
 
-The structure is pretty straight-forward. The app is a collection of entities which have a parent entity. If the parent entity is null, then it is considered a root entity.
-
-bq. An entity (A) is considered a task, unless another entity marks it as it's parent. In which case, the entity (A), is considered a project.
+The structure is pretty straight-forward. The app is a collection of entities which have a parent entity and content. Content can be either a "task":#task or a "project":#project. If the entity has a parent, it is linked to that parent and the parent becomes a "project":#project content type.
 
 !./diagram.png(Diagram)!
 
