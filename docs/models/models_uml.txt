@@ -7,7 +7,7 @@ object Task
 object Project
 object Entity
 
-Entity *-up- ParentTask : Composition
+Entity *-up- Parent : Composition
 Entity *-up- CompletionStatus : Composition
 Entity *-up- ID : Composition
 Entity *-up- Comments : Composition

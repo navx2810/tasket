@@ -1,0 +1,48 @@
+@startuml
+
+class Entity {
+    + Name
+    + ID
+    + Content
+    + Parent
+    + Contributors
+    + Comments
+    
+    + string toString()
+}
+
+interface Content {
+    + num CurrentProgress
+    + num TotalProgress
+    + enum Type
+    + bool IsCompleted
+    + string toString()
+}
+
+class Task extends Content {
+    - bool isCurrentlyCompleted
+    
+    -- Overriden --
+    + set IsCompleted(bool)
+    + get IsCompleted() : bool
+    + get CurrentProgress() : bool
+    + ProgressTotal = 1
+    + Type = Task
+    + string toString()
+}
+
+class Project extends Content {
+    + Entities
+    
+    -- Overriden --
+    + Type = Project
+    + get IsCompleted() : bool
+    + set IsCompleted(bool)
+    + get CurrentProgress() : number
+    + get ProgressTotal() : number 
+    + string toString()
+}
+
+Entity *-- Content
+
+@enduml
