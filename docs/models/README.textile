@@ -6,7 +6,7 @@ The structure is pretty straight-forward. The app is a collection of entities wh
 
 bq. An entity (A) is considered a task, unless another entity marks it as it's parent. In which case, the entity (A), is considered a project.
 
-!./uml.png(Model)!
+!./diagram.png(Diagram)!
 
 h2. Entities
 
