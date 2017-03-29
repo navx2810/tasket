@@ -17,6 +17,8 @@ Entities are the base object for the task/project models. They contain the follo
 - Content := the content of this entity, either a "project":#project or a "task":#task.
 - Parent := the ID of the parent entity this entity depends on.
 
+bq. See "issue #5":https://github.com/navx2810/tasket/issues/5 for additional discussion on how Contributors might work.
+
 h3. Content
 
 Content is an interface that allows an "Entity":#entity to contain some type of data. The two data-types an entity can hold are: "Tasks":#task, and "Projects":#project. Content contain property getters and setters that the implementors will override to retrieve their information.
