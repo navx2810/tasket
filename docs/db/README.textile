@@ -4,6 +4,8 @@ h2. Structure
 
 The database will be accessed by a *db* interface. This will allow for several types of database connections. While most apps have their db calls inside their models, I chose to keep it all under one object. If the complexity grows, it might be worth a look to consider moving CRUD functionality into the models themselves, but this simplifies things for now.
 
+bq. See "issue #8":https://github.com/navx2810/tasket/issues/8 for a discussion on moving CRUD operations into models.
+
 !./diagram.png(Diagram)!
 
 h2. DB
