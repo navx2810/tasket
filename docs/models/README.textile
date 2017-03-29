@@ -10,12 +10,12 @@ h2. Entity
 
 Entities are the base object for the task/project models. They contain the following information:
 
-* Unique Identifier
-* Name
-* List of Contributors
-* List of Comments
-* Content
-* Parent
+- Unique Identifier := an ID for the entity being created. 
+- Name := the name of the entity that shows up in the UI.
+- List of Contributors := a list of user IDs who are operating with this entity.
+- List of Comments := a list of comment IDs on this entity.
+- Content := the content of this entity, either a "project":#project or a "task":#task.
+- Parent := the ID of the parent entity this entity depends on.
 
 h3. Content
 
