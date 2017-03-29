@@ -1,0 +1,36 @@
+h1. Tasket
+
+Tasket is a kanban application similar to "Trello":http://trello.com.
+
+h2. Preface
+
+I am creating this application, because I feel that there are many kanban applications that either oversimplify or overcomplicate the problems they are trying to solve.
+
+This project is to be used by any creator who wants to keep a heirarachical task-list that can be filtered and accessed by solo creators or groups of creators.
+
+In Trello, I had the issue of combining sub-lists withing sub-lists. I would have to create new lanes and somehow logcially connect them so any reader could make sense of the havoc.
+
+h2. Features
+
+- Intuitive project-based hierarchy := Tasks contain parents and if a parent has two or more tasks, it's considered a project.
+- User control and collaboration := Users can choose to "take on" tasks. Their name will appear in the task contributors list and any comments or updates will be linked and they will be notified.
+- Mobile-first design := The application will keep mobile devices in mind so you can access the application from a phone, tablet, desktop, or web interface.
+
+h3. Stretch-goal features
+
+- Offline Save Data := The application can be used offline and when the user connects to a network, the changes will sync with the server.
+
+h2. Technology
+
+- "Vue.js":http://vuejs.org := a front-end library to assist in creating user-interfaces.
+- "Webpack":https://webpack.github.io/ := a utility for building code into a single distributable file for web.
+- "Babel":https://babeljs.io/ := a *transpiler* which accepts ES6 syntax and translates to ES5 code for full browser support.
+- "NeDB":https://github.com/louischatriot/nedb := a subset from MongoDB which allows you to use persistent or in-memory storage options.
+- "TypeScript":https://www.typescriptlang.org/ := similar to Babel, TypeScript is a microsoft-created project which adds types to ES6 syntax. Widely support by many IDE/Editors and has great development support.
+- "NodeJS":https://nodejs.org := the back-end language used by the server/electron application.
+- "Koa.JS":http://koajs.com/ := the lightweight server library that will be used for creating a RESTful microservice.
+
+h3. Considered Technology
+
+- "Feathers":http://feathersjs.com/ := a back-end server framework for real-time APIs. Includes SocketIO. Would replace KoaJS.
+- "Socket.IO":https://socket.io/ := a real-time socket library. Works with Koa.JS and is included with Feathers.
