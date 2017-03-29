@@ -1,0 +1,47 @@
+h1. Models
+
+h2. Structure
+
+The structure is pretty straight-forward. The app is a collection of entities which have a parent entity. If the parent entity is null, then it is considered a root entity.
+
+bq. An entity (A) is considered a task, unless another entity marks it as it's parent. In which case, the entity (A), is considered a project.
+
+!./uml.png(Model)!
+
+h2. Entities
+
+Entities are the base object for the task/project models. They contain the following information:
+
+* Unique Identifier
+* Name
+* List of Contributors
+* List of Comments
+* CompletionStatus
+* Parent
+
+h2. Tasks
+
+If an entity is not relied on as a parent of another entity, it is considered a task, which is a subclass of Entity. Tasks include:
+
+* Description
+* IsCompleted
+
+h2. Projects
+
+If an entity is relied on as a parent of another entity, it is considered a project, which is a subclass of Entity. Projects include:
+
+* List of Entities
+
+h3. CompletionStatus
+
+A completion status is a check to see if the entity is considered completed or not. It is a virtual interface for Task and Project to handle seperately.
+
+- Task := task will handle this by having a boolean which marks whether the task is completed or not.
+- Project := project will loop through it's entity list to check if all projects or tasks are completed recursively.
+
+This class has a few properties:
+
+- CurrentProgress := is the current number of task completions.
+- MaxProgress := is the maximum number of task completions.
+
+bq. In the case of a TASK, MaxProgress is 1 since a task can either be completed or not. For projects, this a loop through all the entities and summing their MaxProgress values.
