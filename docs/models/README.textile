@@ -8,7 +8,7 @@ bq. An entity (A) is considered a task, unless another entity marks it as it's p
 
 !./diagram.png(Diagram)!
 
-h2. Entities
+h2. Entity
 
 Entities are the base object for the task/project models. They contain the following information:
 
@@ -16,32 +16,46 @@ Entities are the base object for the task/project models. They contain the follo
 * Name
 * List of Contributors
 * List of Comments
-* CompletionStatus
+* Content
 * Parent
 
-h2. Tasks
+h3. Content
 
-If an entity is not relied on as a parent of another entity, it is considered a task, which is a subclass of Entity. Tasks include:
+Content is an interface that allows an "Entity":#entity to contain some type of data. The two data-types an entity can hold are: "Tasks":#task, and "Projects":#project. Content contain property getters and setters that the implementors will override to retrieve their information.
 
-* Description
-* IsCompleted
+- CurrentProgress := is a getter for the current progress score of a task or project. A task can only be completed or not completed, but a project's current progress is made up of the sum of the CurrentProgress of it's entities.
+- TotalProgress := the maximum progress score of a task or project. The max progress of a task is 1 _(since a task can only be completed or not completed, 1 or 0)_. The max progress of a project is the sum of all of it's entities MaxProgresses.
+- Type := the type refers to which type the content is. It can either be *project* or *task*. This is used by the view and database as a type-safe way without casting to determine the data-type of the content.
+- IsCompleted := this property is used to get or set whether an entity is marked a complete or not. For tasks, this simply sets it's local private boolean, but for projects, it recursively goes through each task or project in it's entities and sets their IsCompleted to the value.
 
-h2. Projects
+h2. Task
 
-If an entity is relied on as a parent of another entity, it is considered a project, which is a subclass of Entity. Projects include:
+A task is a job to be completed. It can either be completed or not.
 
-* List of Entities
+- Description := this is the text summary of what the collaborators have to do in this task to be considered completed.
+- isCurrentlyCompleted := this flag marks the task as completed or not.
 
-h3. CompletionStatus
+*Overriden*
 
-A completion status is a check to see if the entity is considered completed or not. It is a virtual interface for Task and Project to handle seperately.
+- set IsCompleted(val) := sets *isCurrentlyCompleted* to *val*.
+- get IsCompleted := returns *isCurrentlyCompleted*.
+- get CurrentProgress := returns *1* if *isCurrentlyCompleted* is true, otherwise returns *0*.
+- get ProgressTotal := returns *1* since a task can only be completed or not, _(1 or 0)_.
+- get Type := returns *TASK*.
 
-- Task := task will handle this by having a boolean which marks whether the task is completed or not.
-- Project := project will loop through it's entity list to check if all projects or tasks are completed recursively.
 
-This class has a few properties:
 
-- CurrentProgress := is the current number of task completions.
-- MaxProgress := is the maximum number of task completions.
+h2. Project
 
-bq. In the case of a TASK, MaxProgress is 1 since a task can either be completed or not. For projects, this a loop through all the entities and summing their MaxProgress values.
+A project is a collection of entities _(task or other projects)_ that depend on this entity as it's parent.
+
+- Entities := a list of all the entities that depend on this entity as it's parent.
+
+*Overriden*
+
+- set IsCompleted(val) := recursively loops through entities and set's each entities *IsCompleted* to *val*.
+- get IsCompleted := recursively loops through entities and checks to see if the entities *IsCompleted* is true. If it is, this returns *true*, otherwise, it returns *false*.
+- get CurrentProgress := returns the summeration of each entities *CurrentProgress* value.
+- get ProgressTotal := returns the summeration of each entities *ProgressTotal* value.
+- get Type := returns *PROJECT*.
+
