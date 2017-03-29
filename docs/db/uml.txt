@@ -1,0 +1,17 @@
+@startuml
+
+interface DB {
+    + Connect()
+    + AllEntities()
+    + AllTasks()
+    + AllProjects()
+    + FindEntity(entity_object)
+    + CreateEntity(entity)
+    + CreateContent(content)
+}
+
+DB <|-- AppDB : inherits
+DB <|-- BrowserDB : inherits
+DB <|-- ServerDB : inherits
+
+@enduml
