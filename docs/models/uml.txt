@@ -21,6 +21,7 @@ interface Content {
 
 class Task extends Content {
     - bool isCurrentlyCompleted
+    + string Description
     
     -- Overriden --
     + set IsCompleted(bool)
