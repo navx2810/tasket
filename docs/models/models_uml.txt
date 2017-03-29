@@ -1,0 +1,22 @@
+@startuml
+
+title Model Relationships
+
+
+object Task
+object Project
+object Entity
+
+Entity *-up- ParentTask : Composition
+Entity *-up- CompletionStatus : Composition
+Entity *-up- ID : Composition
+Entity *-up- Comments : Composition
+Entity *-up- Contributors : Composition
+
+Task -up-|> Entity : Extends
+Project -up-|> Entity : Extends
+Project *-- Entities : Composition
+Task *-- Description : Composition
+Entities ..> Entity
+
+@enduml
