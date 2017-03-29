@@ -54,7 +54,7 @@ h2. Technology
 
 - "Vue.js":http://vuejs.org := a front-end library to assist in creating user-interfaces.
 - "Webpack":https://webpack.github.io/ := a utility for building code into a single distributable file for web.
-- "Babel":https://babeljs.io/ := a *transpiler* which accepts ES6 syntax and translates to ES5 code for full browser support.
+- "Babel":https://babeljs.io/ := a "_transpiler_" which accepts ES6 syntax and translates to ES5 code for full browser support.
 - "NeDB":https://github.com/louischatriot/nedb := a subset from MongoDB which allows you to use persistent or in-memory storage options.
 - "TypeScript":https://www.typescriptlang.org/ := similar to Babel, TypeScript is a microsoft-created project which adds types to ES6 syntax. Widely support by many IDE/Editors and has great development support.
 - "NodeJS":https://nodejs.org := the back-end language used by the server/electron application.
