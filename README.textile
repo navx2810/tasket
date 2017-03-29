@@ -10,6 +10,36 @@ This project is to be used by any creator who wants to keep a heirarachical task
 
 In Trello, I had the issue of combining sub-lists withing sub-lists. I would have to create new lanes and somehow logcially connect them so any reader could make sense of the havoc.
 
+h3. Example
+
+Let's say I want to organize the task for home improvement. So I create a new Trello board and name the first lane *Tasks*. I start writing my tasks that I need:
+
+* Wash the kitchen floor
+* Empty the dishes from the dishwasher
+* Fill the dishwasher
+* Scrub the sink
+* Vacuum the living room floor
+* Dust the furniture in the living room
+* Shampoo the kids room carpet
+* Mow the lawn
+* Wash the cars
+* ...
+
+After a while, I start adding more and more to this list. It becomes unwieldy fast. So I decide that I need to seperate these task by room. I create a lane for each room on my Trello board and now things start to get out of hand. I may end up with 6 or 7 different lanes that depend on the first lane I created.
+
+If I decided that I wanted to start adding tasks for
+
+* fixing the plumbing downstairs
+* painting the dining room
+
+I would create another lane for those category of tasks and seperate it by cleaning and improvement. However, now I decide I want to divide the improvement tasks as well leaving me with cleaning having 6 or 7 lanes and improvement having 6 or 7 as well.
+
+You can see how the complexity would skyrocket if you start adding more things. While relatively simple projects like home-improvement are often single-person tasks, imagine designing or developing software. Teams of teams are working on their own sub-division of sub-division and communication between lanes or even boards would be hell.
+
+That is the problem this project aims to solve.
+
+bq. For Trello users, you can imagine this software letting you create lanes in lanes. It's an over simplification of the premise, but it might give you a better idea of how this will work.
+
 h2. Features
 
 - Intuitive project-based hierarchy := Tasks contain parents and if a parent has two or more tasks, it's considered a project.
