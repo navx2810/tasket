@@ -2,6 +2,7 @@
 
 class Entity {
     + Name
+    + Description
     + ID
     + Content
     + Parent
@@ -20,22 +21,19 @@ interface Content {
 }
 
 class Task extends Content {
-    - bool isCurrentlyCompleted
-    + string Description
-    
-    -- Overriden --
-    + set IsCompleted(bool)
-    + get IsCompleted() : bool
+
+    -- Override --
+    + Type = Task
+    + bool IsCompleted
     + get CurrentProgress() : bool
     + ProgressTotal = 1
-    + Type = Task
     + string toString()
 }
 
 class Project extends Content {
     + Entities
     
-    -- Overriden --
+    -- Override --
     + Type = Project
     + get IsCompleted() : bool
     + set IsCompleted(bool)

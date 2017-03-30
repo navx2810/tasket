@@ -11,6 +11,7 @@ h2. Entity
 Entities are the base object for the task/project models. They contain the following information:
 
 - Unique Identifier := an ID for the entity being created. 
+- Description := the text summary of what this entity is. In the case of a task: this defines the task objectives. For a project, it could be a general description.
 - Name := the name of the entity that shows up in the UI.
 - List of Contributors := a list of user IDs who are operating with this entity.
 - List of Comments := a list of comment IDs on this entity.
@@ -32,13 +33,9 @@ h2. Task
 
 A task is a job to be completed. It can either be completed or not.
 
-- Description := this is the text summary of what the collaborators have to do in this task to be considered completed.
-- isCurrentlyCompleted := this flag marks the task as completed or not.
-
 *Overriden*
 
-- set IsCompleted(val) := sets *isCurrentlyCompleted* to *val*.
-- get IsCompleted := returns *isCurrentlyCompleted*.
+- IsCompleted := a variable for determining if the Task is considered complete or not.
 - get CurrentProgress := returns *1* if *isCurrentlyCompleted* is true, otherwise returns *0*.
 - get ProgressTotal := returns *1* since a task can only be completed or not, _(1 or 0)_.
 - get Type := returns *TASK*.
