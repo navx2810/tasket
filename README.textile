@@ -49,6 +49,7 @@ h2. Features
 h3. Stretch-goal features
 
 - Offline Save Data := The application can be used offline and when the user connects to a network, the changes will sync with the server.
+- Milestones := Users can set up milestones with requirements for various tasks and projects. Milestones help to keep track of short and long term goals for the project such as release version or sprints. 
 
 h2. Technology
 
